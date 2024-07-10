@@ -1,1 +1,2 @@
 This is the terraform scripts for aws cloud provider
+added the global config
