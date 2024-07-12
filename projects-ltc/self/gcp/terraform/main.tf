@@ -1,7 +1,7 @@
 provider "google" {
     project = "My-first-project"
     region  = "us-west1"
-    zone    = "us-west1-a"
+    zone    = "us-west1-b"
 }
 
 resource "google_compute_instance" "main" {
@@ -17,5 +17,5 @@ resource "google_compute_instance" "main" {
             image = "Debian GNU/Linux 12 (bookworm)"
         }
     }
-    
+  
 }
