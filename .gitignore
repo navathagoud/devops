@@ -1,1 +1,6 @@
+# to ignore the terraform backend, provider plugins
 .terraform
+
+# to ignore gcp creds 
+sa-creds.json
+
