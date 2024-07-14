@@ -1,14 +1,14 @@
 ## this configuration file is to to create vpc in gcp.
-provider "google" {
-  credentials = file("advance-totem-428319-n5-902bb284809c.json")
-  project = "advance-totem-428319-n5"
-  region  = us-west1
-}
+#provider "google" {
+#  credentials = file("advance-totem-428319-n5-902bb284809c.json")
+#  project = "advance-totem-428319-n5"
+#  region  = us-west1
+#}
 
 resource "google_compute_network" "my_vpc_network" {
   name                    = "my-vpc-network"
   auto_create_subnetworks = "false"
-  routing_mode            = "Global"
+  routing_mode            = "GLOBAL"
   description             = "This is a vpc network"
   mtu                     = 1460
 }
@@ -25,7 +25,7 @@ resource "google_compute_subnetwork" "public_subnet" {
 # Create a private subnet
 resource "google_compute_subnetwork" "private_subnet" {
   name                     = "private-subnet"
-  region                   = "us-west1"
+  region                   = "us-wes1"
   network                  = google_compute_network.my_vpc_network.self_link
   ip_cidr_range            = "10.0.2.0/24" 
   private_ip_google_access = true  # Allows private Google access for instances in this subnet
