@@ -31,3 +31,16 @@ resource "google_compute_subnetwork" "private_subnet" {
   private_ip_google_access = true  # Allows private Google access for instances in this subnet
   depends_on               = [google_compute_network.my_vpc_network]
 }
+
+resource "google_compute_firewall" "rules" {
+  name        = "my-firewall-rule"
+  network     = "my-vpc-network"
+  description = "Creates firewall rule targeting tagged instances"
+
+  allow {
+    protocol  = "tcp"
+    ports     = ["80", "443",]
+  }
+
+  target_tags = ["web-server"]
+}
