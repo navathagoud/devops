@@ -34,7 +34,7 @@ resource "google_compute_subnetwork" "private_subnet" {
 
 resource "google_compute_firewall" "rules" {
   name        = "my-firewall-rule"
-  network     = "my-vpc-network"
+  network     = google_compute_network.my_vpc_network.self_link
   description = "Creates firewall rule targeting tagged instances"
 
   allow {
@@ -43,4 +43,5 @@ resource "google_compute_firewall" "rules" {
   }
 
   source_tags = ["web-server"]
+  source_ranges = ["0.0.0.0/0"]
 }
