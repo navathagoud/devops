@@ -25,7 +25,7 @@ resource "google_compute_subnetwork" "public_subnet" {
 # Create a private subnet
 resource "google_compute_subnetwork" "private_subnet" {
   name                     = "private-subnet"
-  region                   = "us-wes1"
+  region                   = "us-west1"
   network                  = google_compute_network.my_vpc_network.self_link
   ip_cidr_range            = "10.0.2.0/24" 
   private_ip_google_access = true  # Allows private Google access for instances in this subnet
@@ -39,8 +39,8 @@ resource "google_compute_firewall" "rules" {
 
   allow {
     protocol  = "tcp"
-    ports     = ["80", "443",]
+    ports     = ["80", "443","22"]
   }
 
-  target_tags = ["web-server"]
+  source_tags = ["web-server"]
 }
