@@ -1,0 +1,15 @@
+vi .netrc
+
+machine github.com
+login navathagoud
+password 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  // personal access token//
+
+.netrc file should be in this format
+
+come back to dir where .git folder is present
+git add .
+git commit - m "commit message"
+git push 
+to merge into repo
+check it by 
+git status
