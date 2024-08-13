@@ -2,7 +2,7 @@ vi .netrc
 
 machine github.com
 login navathagoud
-password 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  // personal access token//
+password  // personal access token//
 
 .netrc file should be in this format
 
