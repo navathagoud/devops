@@ -13,3 +13,6 @@ git push
 to merge into repo
 check it by 
 git status
+jsbdvj
+q8365
+
